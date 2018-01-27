@@ -19,6 +19,10 @@ dispatcher = updater.dispatcher
 def start(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text="Hello, this is a Telegram Bot that tells you if a particular study venue is occupied or not.\n\nThe list of commands are below:\n/start\n/venues")
 
+def stop(bot, update):
+	bot.sendMessage(chat_id=update.message.chat_id, text="Bye bye!")
+	updater.stop_polling()
+
 #Faculties and Utown Building
 def venues(bot, update):
 	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
@@ -372,6 +376,7 @@ def S17_(bot, update):
 #Commands are telegram messages that start with /
 start_handler = CommandHandler('start', start)
 venues_handler = CommandHandler('venues', venues)
+stop_handler = CommandHandler('stop', stop)
 
 #Handler class to handle Telegram updates based on a regex
 soc_handler = RegexHandler('SOC', SOC)
@@ -407,6 +412,7 @@ AS7_handler = RegexHandler('AS7', AS7)
 AS8_handler = RegexHandler('AS8', AS8)
 BIZ1_handler = RegexHandler('Biz1', BIZ1)
 BIZ2_handler = RegexHandler('Biz2', BIZ2)
+S17_handler = RegexHandler('S17', S17_)
 S1_handler = RegexHandler('S1', S1)
 SOneA_handler = RegexHandler('S1A', SOneA)
 S2_handler = RegexHandler('S2', S2_)
@@ -420,7 +426,6 @@ S12_handler = RegexHandler('S12', S12_)
 S13_handler = RegexHandler('S13', S13_)
 S14_handler = RegexHandler('S14', S14_)
 S16_handler = RegexHandler('S16', S16_)
-S17_handler = RegexHandler('S17', S17_)
 
 
 
@@ -448,6 +453,12 @@ dispatcher.add_handler(E5_handler)
 dispatcher.add_handler(EA_handler)
 dispatcher.add_handler(UTSRC_handler)
 dispatcher.add_handler(ERC_handler)
+dispatcher.add_handler(S17_handler)
+dispatcher.add_handler(S16_handler)
+dispatcher.add_handler(S14_handler)
+dispatcher.add_handler(S13_handler)
+dispatcher.add_handler(S12_handler)
+dispatcher.add_handler(S11_handler)
 
 dispatcher.add_handler(AS1_handler)
 dispatcher.add_handler(AS2_handler)
@@ -465,12 +476,9 @@ dispatcher.add_handler(S4_handler)
 dispatcher.add_handler(S4A_handler)
 dispatcher.add_handler(S5_handler)
 dispatcher.add_handler(S8_handler)
-dispatcher.add_handler(S11_handler)
-dispatcher.add_handler(S12_handler)
-dispatcher.add_handler(S13_handler)
-dispatcher.add_handler(S14_handler)
-dispatcher.add_handler(S16_handler)
-dispatcher.add_handler(S17_handler)
 
 updater.start_polling()
+
+dispatcher.add_handler(stop_handler)
+
 
