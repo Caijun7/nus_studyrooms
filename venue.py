@@ -84,19 +84,6 @@ def openByBuilding(fac):
     return None;
 
 
-def getAvailability(fac, buildingName):
-    now = datetime.datetime.now()
-    availability = dict()
-
-    facBuilding = openByBuilding(fac)
-    buildingRooms = facBuilding[buildingName]
-    buildingBookings = booking_parser.getBooking()
-
-    for room in buildingRooms:
-        availability[room] = checkAvailable(buildingBookings, room)
-    print(availability)
-
-
 def getAvailability(fac , buildingName):
 	now = datetime.datetime.now()
 	availability = dict()
@@ -113,6 +100,7 @@ def getAvailability(fac , buildingName):
 		for room in buildingBookings[buildingName]:
 			availability[room] = checkBooking(room, buildingBookings[buildingName][room])
 	print(availability)
+	return availability
 	
 
 def checkBooking(room,bookings):

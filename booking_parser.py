@@ -28,7 +28,7 @@ def to24H(timeString):
 	time = timeString.split(" - ")
 	result = []
 	for x in time:
-		print(x)
+		#print(x)
 		if x[1] != ':':
 			hours = int(x[:2])
 		else:
@@ -63,7 +63,7 @@ def getBooking(buildingName):
 	}
 	#print(buildingSchedule)
 	for room in rooms:
-		print(room)
+		#print(room)
 		if buildingName == "COM1" and rooms.index(room)<4 or rooms.index(room) == 10 or (rooms.index(room)>12 and rooms.index(room)<17 and rooms.index(room) != 14) or rooms.index(room)> len(rooms)-2:
 			schedule = {room:extractInfo("https://mysoc.nus.edu.sg/~calendar/getBooking.cgi?room="+room+"&thedate="+str(now.year)+"/"+"2"+"/"+"2")}
 			buildingSchedule["COM1"].update(schedule.items())
