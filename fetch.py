@@ -1,11 +1,10 @@
-import urllib2 #change to python3 
+# import urllib2 #change to python3
 import json
 import datetime
-#import numpy as np
 
-jsonData =  urllib2.urlopen("https://nusmods.com/api/2017-2018/2/venueInformation.json").read()
-venueInfo = json.loads(jsonData)
-# venueInfo = np.array(jsonToPython)
+# jsonData =  urllib2.urlopen("https://nusmods.com/api/2017-2018/2/venueInformation.json").read()
+# venueInfo = json.loads(jsonData)
+venueInfo = json.load(open('venueinformation.json'))
 
 # print(venueInfo)
 
@@ -41,5 +40,5 @@ def findRoomState(roomInput, timing):
 
 
 
-#print(findRoomState("COM1-0201", "1300"))
+# print(findRoomState("COM1-0201", "1300"))
 
