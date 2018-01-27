@@ -18,7 +18,9 @@ def findRoom(room):
 def findDay(weekday, rooms):
     # check if it is sunday
     if weekday == 6:
-        return None
+		day = rooms[0]
+		availability = day["Availability"]
+		return availability
     day = rooms[weekday]
     availability = day["Availability"]
     return availability
