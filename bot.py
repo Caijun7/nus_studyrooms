@@ -193,6 +193,181 @@ def ERC(bot, update):
 
 	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
 
+#FASS
+def AS1(bot, update):
+	replymessage = venue.getAvailability("FASS", "AS1")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def AS2(bot, update):
+	replymessage = venue.getAvailability("FASS", "AS2")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def AS3(bot, update):
+	replymessage = venue.getAvailability("FASS", "AS3")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def AS4(bot, update):
+	replymessage = venue.getAvailability("FASS", "AS4")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def AS5(bot, update):
+	replymessage = venue.getAvailability("FASS", "AS5")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def AS6(bot, update):
+	replymessage = venue.getAvailability("FASS", "AS6")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def AS7(bot, update):
+	replymessage = venue.getAvailability("FASS", "AS7")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def AS8(bot, update):
+	replymessage = venue.getAvailability("FASS", "AS8")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+#BIZ
+def BIZ1(bot, update):
+	replymessage = venue.getAvailability("BIZ", "BIZ1")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def BIZ2(bot, update):
+	replymessage = venue.getAvailability("BIZ", "BIZ2")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+#FOS
+def S1(bot, update):
+	print("asd")
+	replymessage = venue.getAvailability("FOS", "S1")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def SOneA(bot, update):
+	replymessage = venue.getAvailability("FOS", "S1A")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S2_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S2")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S3_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S3")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S4_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S4")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S4A_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S4A")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S5_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S5")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S8_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S8")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S11_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S11")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S12_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S12")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S13_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S13")
+	newreply = ""
+
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S14_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S14")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S16_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S16")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+def S17_(bot, update):
+	replymessage = venue.getAvailability("FOS", "S17")
+	newreply = ""
+	for x in replymessage:
+		newreply = newreply + x + ": " + replymessage[x] + "\n"
+	bot.send_message(chat_id=update.message.chat_id, text=str(newreply))
+
+
+
 #Handler class to handle Telegram commands
 #Commands are telegram messages that start with /
 start_handler = CommandHandler('start', start)
@@ -206,7 +381,6 @@ fos_handler = RegexHandler('FOS', FOS)
 sde_handler = RegexHandler('SDE', SDE)
 foe_handler = RegexHandler('FOE', FOE)
 lt_handler = RegexHandler('Lecture Theatres', LectureTheatres)
-AS1_handler = RegexHandler('AS1', AS1)
 
 COM1_handler = RegexHandler('COM1', COM1)
 COM2_handler = RegexHandler('COM2', COM2)
@@ -223,6 +397,33 @@ EA_handler = RegexHandler('EA', EA)
 UTSRC_handler = RegexHandler('UTSRC', UTSRC)
 ERC_handler = RegexHandler('ERC', ERC)
 
+AS1_handler = RegexHandler('AS1', AS1)
+AS2_handler = RegexHandler('AS2', AS2)
+AS3_handler = RegexHandler('AS3', AS3)
+AS4_handler = RegexHandler('AS4', AS4)
+AS5_handler = RegexHandler('AS5', AS5)
+AS6_handler = RegexHandler('AS6', AS6)
+AS7_handler = RegexHandler('AS7', AS7)
+AS8_handler = RegexHandler('AS8', AS8)
+BIZ1_handler = RegexHandler('Biz1', BIZ1)
+BIZ2_handler = RegexHandler('Biz2', BIZ2)
+S1_handler = RegexHandler('S1', S1)
+SOneA_handler = RegexHandler('S1A', SOneA)
+S2_handler = RegexHandler('S2', S2_)
+S3_handler = RegexHandler('S3', S3_)
+S4_handler = RegexHandler('S4', S4_)
+S4A_handler = RegexHandler('S4A', S4A_)
+S5_handler = RegexHandler('S5', S5_)
+S8_handler = RegexHandler('S8', S8_)
+S11_handler = RegexHandler('S11', S11_)
+S12_handler = RegexHandler('S12', S12_)
+S13_handler = RegexHandler('S13', S13_)
+S14_handler = RegexHandler('S14', S14_)
+S16_handler = RegexHandler('S16', S16_)
+S17_handler = RegexHandler('S17', S17_)
+
+
+
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(venues_handler)
 dispatcher.add_handler(soc_handler)
@@ -232,7 +433,6 @@ dispatcher.add_handler(fos_handler)
 dispatcher.add_handler(sde_handler)
 dispatcher.add_handler(foe_handler)
 dispatcher.add_handler(lt_handler)
-dispatcher.add_handler(AS1_handler)
 
 dispatcher.add_handler(COM1_handler)
 dispatcher.add_handler(COM2_handler)
@@ -248,6 +448,29 @@ dispatcher.add_handler(E5_handler)
 dispatcher.add_handler(EA_handler)
 dispatcher.add_handler(UTSRC_handler)
 dispatcher.add_handler(ERC_handler)
+
+dispatcher.add_handler(AS1_handler)
+dispatcher.add_handler(AS2_handler)
+dispatcher.add_handler(AS3_handler)
+dispatcher.add_handler(AS4_handler)
+dispatcher.add_handler(AS5_handler)
+dispatcher.add_handler(AS6_handler)
+dispatcher.add_handler(AS7_handler)
+dispatcher.add_handler(AS8_handler)
+dispatcher.add_handler(S1_handler)
+dispatcher.add_handler(SOneA_handler)
+dispatcher.add_handler(S2_handler)
+dispatcher.add_handler(S3_handler)
+dispatcher.add_handler(S4_handler)
+dispatcher.add_handler(S4A_handler)
+dispatcher.add_handler(S5_handler)
+dispatcher.add_handler(S8_handler)
+dispatcher.add_handler(S11_handler)
+dispatcher.add_handler(S12_handler)
+dispatcher.add_handler(S13_handler)
+dispatcher.add_handler(S14_handler)
+dispatcher.add_handler(S16_handler)
+dispatcher.add_handler(S17_handler)
 
 updater.start_polling()
 
