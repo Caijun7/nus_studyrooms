@@ -97,16 +97,30 @@ def getAvailability(fac, buildingName):
     print(availability)
 
 
-def checkAvailable(buildingBookings, room):
-    result = fetch.findRoomState(room, "1300")
-    if result == "occupied":
-        return "occupied"
-    elif result == "vacant" and ("COM" in room or "AS6" in room or "i3" in room):
-        return checkBooking(buildingBookings, room)
+def getAvailability(fac , buildingName):
+	now = datetime.datetime.now()
+	availability = dict()
+	
+	facBuilding = openByBuilding(fac)
+	buildingRooms = facBuilding[buildingName]
+	
+	
+	for room in buildingRooms:
+		availability[room] = fetch.findRoomState(room,"1300")
+		
+	if "COM" in buildingName or "AS6" in buildingName or "i3" in buildingName:
+		buildingBookings =  booking_parser.getBooking(buildingName)
+		for room in buildingBookings[buildingName]:
+			availability[room] = checkBooking(room, buildingBookings[buildingName][room])
+	print(availability)
+	
 
+def checkBooking(room,bookings):
+	now = datetime.datetime.now()
+	for event in bookings:
+		if int(event[0])<=1300 and int(event[1])>1300:
+			return "occupied"
+	return "vacant"
+		
 
-def checkBooking(buildingBookings, room):
-    return "vacant"
-
-
-getAvailability("FASS", "AS6")
+#getAvailability("SOC", "COM1")
