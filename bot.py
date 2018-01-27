@@ -56,9 +56,15 @@ def SDE(bot, update):
 	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of buildings below.", reply_markup=sde_reply_markup)
 
 def FOE(bot, update):
-	FoE_building_keyboard = [['E1', 'E1A'], ['E2', 'E2A'], ['E3', 'E3A'], ['E4', 'E4A'], ['E5', 'EA']]
-	FoE_reply_markup = telegram.ReplyKeyboardMarkup(FoE_building_keyboard)
-	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of buildings below (scrollable).", reply_markup=FoE_reply_markup)
+	foe_building_keyboard = [['E1', 'E1A'], ['E2', 'E2A'], ['E3', 'E3A'], ['E4', 'E4A'], ['E5', 'EA']]
+	foe_reply_markup = telegram.ReplyKeyboardMarkup(foe_building_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of buildings below (scrollable).", reply_markup=foe_reply_markup)
+
+def AS1(bot, update):
+	replymessage = venue.getAvailability("FASS", "AS1")
+	testing = ' '.join(replymessage)
+	print testing
+	bot.send_message(chat_id=update.message.chat_id, text=testing)
 
 #Handler class to handle Telegram commands
 #Commands are telegram messages that start with /
@@ -73,8 +79,9 @@ fos_handler = RegexHandler('FOS', FOS)
 sde_handler = RegexHandler('SDE', SDE)
 foe_handler = RegexHandler('FOE', FOE)
 lt_handler = RegexHandler('Lecture Theatres', LectureTheatres)
+AS1_handler = RegexHandler('AS1', AS1)
 
-bot.reply_to_message(chat_id=update.message.chat_id, text= venue.getAvailability("FASS", "AS1"))
+#bot.reply_to_message(chat_id=update.message.chat_id, text= venue.getAvailability("FASS", "AS1"))
 #soc_vac_handler = RegexHandler('AS1', FASS.getAvailability(FASS, AS1))
 #dispatcher.add_handler(soc_vac_handler)
 
@@ -87,5 +94,6 @@ dispatcher.add_handler(fos_handler)
 dispatcher.add_handler(sde_handler)
 dispatcher.add_handler(foe_handler)
 dispatcher.add_handler(lt_handler)
+dispatcher.add_handler(AS1_handler)
 updater.start_polling()
 
