@@ -38,6 +38,12 @@ def to24H(timeString):
 			result.append(str(hours*100))
 	return result
 	
+def printf(list):
+	for room in list:
+		print(room)
+		print(list[room])
+		print("\n")
+		
 def getBooking():
 	rooms = ["DR1","DR2","DR3","DR4","DR5","DR6","DR7","DR8","DR9","DR10","DR11","DR12","ExecutiveClassRm","MR1","MR2","MR3","MR4","MR5","MR6","MR7"]
 	now = datetime.datetime.now()
@@ -45,9 +51,28 @@ def getBooking():
 #urllib2.urlopen("https://mysoc.nus.edu.sg/~calendar/getBooking.cgi?room=DR2&thedate=2018/01/30").read()
 #print(extractInfo("https://mysoc.nus.edu.sg/~calendar/getBooking.cgi?room="+rooms[0]+"&thedate=2018/01/30"))
 	schedule = dict()
+	buildingSchedule = { 
+		'COM1': dict(),
+		'COM2': dict(),
+		'I-CUBE': dict(),
+		'AS6': dict(),
+	}
+	#print(buildingSchedule)
 	for room in rooms:
-		#print(room)
-		schedule[room] = extractInfo("https://mysoc.nus.edu.sg/~calendar/getBooking.cgi?room="+room+"&thedate="+str(now.year)+"/"+"2"+"/"+"2")
+		print(room)
+		schedule = {room:extractInfo("https://mysoc.nus.edu.sg/~calendar/getBooking.cgi?room="+room+"&thedate="+str(now.year)+"/"+"2"+"/"+"2")}
+		if rooms.index(room)<4 or rooms.index(room) == 10 or (rooms.index(room)>12 and rooms.index(room)<17 and rooms.index(room) != 14) or rooms.index(room)== len(rooms)-1:
+			buildingSchedule["COM1"].update(schedule.items())
+		elif (rooms.index(room)>3 and rooms.index(room)<10) or rooms.index(room) == 11 or rooms.index(room) == 14:  
+			buildingSchedule["COM2"].update(schedule.items())
+		elif rooms.index(room) == 17 :
+			buildingSchedule["AS6"].update(schedule.items())
+		elif rooms.index(room)>17 and rooms.index(room)<21:
+			buildingSchedule["I-CUBE"].update(schedule.items())
+		#printf(buildingSchedule)
+	return buildingSchedule
 	#schedule[room] = extractInfo("https://mysoc.nus.edu.sg/~calendar/getBooking.cgi?room="+room+"&thedate="+str(now.year)+"/"+str(now.month)+"/"+str(now.day))
 	#for room in schedule:
 	#	print(room);print(schedule[room])
+#list = getBooking()
+#print(list["COM1"]["MR1"])
