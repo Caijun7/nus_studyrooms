@@ -35,7 +35,55 @@ def eightTime(bot, update):
 	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
 	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
 
-def soon(bot, update):
+def nineTime(bot, update):
+	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
+
+def tenTime(bot, update):
+	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
+
+def elevenTime(bot, update):
+	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
+
+def twelveTime(bot, update):
+	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
+
+def thirteenTime(bot, update):
+	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
+
+def fourteenTime(bot, update):
+	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
+
+def fifteenTime(bot, update):
+	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
+
+def sixteenTime(bot, update):
+	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
+
+def seventeenTime(bot, update):
 	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
 	#The ReplyKeyboardMarkup is used to create the custom keyboard
 	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
@@ -399,7 +447,15 @@ time_handler = CommandHandler('time', time)
 # combine_handler = MessageHandler(Filters.text, venues)
 venues_handler = RegexHandler('venues', venues)
 eight_handler = RegexHandler('0800', eightTime)
-
+nine_handler = RegexHandler('0900', nineTime)
+ten_handler = RegexHandler('1000', tenTime)
+eleven_handler = RegexHandler('1100', elevenTime)
+twelve_handler = RegexHandler('1200', twelveTime)
+thirteen_handler = RegexHandler('1300', thirteenTime)
+fourteen_handler = RegexHandler('1400', fourteenTime)
+fifteen_handler = RegexHandler('1500', fifteenTime)
+sixteen_handler = RegexHandler('1600', sixteenTime)
+seventeen_handler = RegexHandler('1700', seventeenTime)
 
 
 #Handler class to handle Telegram updates based on a regex
@@ -456,6 +512,16 @@ S16_handler = RegexHandler('S16', S16_)
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(time_handler)
 dispatcher.add_handler(eight_handler)
+dispatcher.add_handler(nine_handler)
+dispatcher.add_handler(ten_handler)
+dispatcher.add_handler(eleven_handler)
+dispatcher.add_handler(twelve_handler)
+dispatcher.add_handler(thirteen_handler)
+dispatcher.add_handler(fourteen_handler)
+dispatcher.add_handler(fifteen_handler)
+dispatcher.add_handler(sixteen_handler)
+dispatcher.add_handler(seventeen_handler)
+
 
 dispatcher.add_handler(venues_handler)
 dispatcher.add_handler(soc_handler)
