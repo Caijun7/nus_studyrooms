@@ -18,7 +18,7 @@ dispatcher = updater.dispatcher
 
 
 def start(bot, update):
-	bot.sendMessage(chat_id=update.message.chat_id, text="Hello, this is a Telegram Bot that tells you if a particular study venue is occupied or not.\n\nThe list of commands are below:\n/start\n/venues")
+	bot.sendMessage(chat_id=update.message.chat_id, text="Hello, this is a Telegram Bot that tells you if a particular study venue is occupied or not.\n\nSelect a time to view the venues\n/time")
 
 def time(bot, update):
 	#yl fn
