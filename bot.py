@@ -5,7 +5,7 @@ import booking_parser
 import telegram
 import logging
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Updater, CommandHandler, RegexHandler, CallbackQueryHandler
+from telegram.ext import Updater, CommandHandler, RegexHandler, CallbackQueryHandler, MessageHandler, Filters
 
 #Telegram bot token
 TOKEN_USE = "486363762:AAFFmrpjRxKMuPTrQCFHluzuCOL5uemyELM"
@@ -16,19 +16,37 @@ updater = Updater(token=TOKEN_USE)
 #Sorts the updates fetched by the updater according to the handlers below
 dispatcher = updater.dispatcher
 
+
 def start(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text="Hello, this is a Telegram Bot that tells you if a particular study venue is occupied or not.\n\nThe list of commands are below:\n/start\n/venues")
 
-def stop(bot, update):
-	bot.sendMessage(chat_id=update.message.chat_id, text="Bye bye!")
-	updater.stop_polling()
+def time(bot, update):
+	#yl fn
+	currTime = 1000
+	
+	time_keyboard = [["0900", "1000"], ['Other timings']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	time_reply_markup = telegram.ReplyKeyboardMarkup(time_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select time", reply_markup=time_reply_markup)
+
+def firstTime(bot, update):
+	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
+
+def soon(bot, update):
+	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
+	#The ReplyKeyboardMarkup is used to create the custom keyboard
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
 
 #Faculties and Utown Building
 def venues(bot, update):
 	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
 	#The ReplyKeyboardMarkup is used to create the custom keyboard
 	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
-	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).\nTo go back to this keyboard again, simply type /venues", reply_markup=reply_markup)
+	bot.send_message(chat_id=update.message.chat_id, text="Select from the list of locations below (scrollable).", reply_markup=reply_markup)
 
 def LectureTheatres(bot, update):
 	lt_keyboard = [['LT1', 'LT2'], ['LT3', 'LT4'], ['LT5', 'LT6'], ['LT7', 'LT7A'], ['LT8', 'LT9'], ['LT10', 'LT11'], ['LT12', 'LT13'], ['LT14', 'LT15'], ['LT16', 'LT17'], ['LT18', 'LT19'], ['LT20', 'LT21'], ['LT22', 'LT23'], ['LT24', 'LT25'], ['LT26', 'LT27'], ['LT28', 'LT29'], ['LT30', 'LT31'], ['LT32', 'LT33'], ['LT34']]
@@ -375,8 +393,14 @@ def S17_(bot, update):
 #Handler class to handle Telegram commands
 #Commands are telegram messages that start with /
 start_handler = CommandHandler('start', start)
-venues_handler = CommandHandler('venues', venues)
-stop_handler = CommandHandler('stop', stop)
+time_handler = CommandHandler('time', time)
+
+# text = [nowStr, soonStr]
+# combine_handler = MessageHandler(Filters.text, venues)
+venues_handler = RegexHandler('venues', venues)
+first_handler = RegexHandler('0900', firstTime)
+
+
 
 #Handler class to handle Telegram updates based on a regex
 soc_handler = RegexHandler('SOC', SOC)
@@ -430,6 +454,9 @@ S16_handler = RegexHandler('S16', S16_)
 
 
 dispatcher.add_handler(start_handler)
+dispatcher.add_handler(time_handler)
+dispatcher.add_handler(first_handler)
+
 dispatcher.add_handler(venues_handler)
 dispatcher.add_handler(soc_handler)
 dispatcher.add_handler(biz_handler)
@@ -479,6 +506,5 @@ dispatcher.add_handler(S8_handler)
 
 updater.start_polling()
 
-dispatcher.add_handler(stop_handler)
 
 
