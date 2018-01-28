@@ -531,6 +531,8 @@ dispatcher.add_handler(fos_handler)
 dispatcher.add_handler(sde_handler)
 dispatcher.add_handler(foe_handler)
 dispatcher.add_handler(lt_handler)
+dispatcher.add_handler(BIZ2_handler)
+dispatcher.add_handler(BIZ1_handler)
 
 dispatcher.add_handler(COM1_handler)
 dispatcher.add_handler(COM2_handler)
