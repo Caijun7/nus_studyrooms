@@ -24,12 +24,12 @@ def time(bot, update):
 	#yl fn
 	currTime = 1000
 	
-	time_keyboard = [["0900", "1000"], ['Other timings']]
+	time_keyboard = [["0800", "0900"], ["0800", "0900"], ["1000", "1100"], ["1200", "1300"], ["1400", "1500"], ["1600", "1700"], ['Other timings']]
 	#The ReplyKeyboardMarkup is used to create the custom keyboard
 	time_reply_markup = telegram.ReplyKeyboardMarkup(time_keyboard)
 	bot.send_message(chat_id=update.message.chat_id, text="Select time", reply_markup=time_reply_markup)
 
-def firstTime(bot, update):
+def eightTime(bot, update):
 	custom_keyboard = [['BIZ', 'SOC'], ['FASS', 'FOE'], ['FOS', 'SDE'], ['ERC', 'UTSRC'], ['Lecture Theatres']]
 	#The ReplyKeyboardMarkup is used to create the custom keyboard
 	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
@@ -398,7 +398,7 @@ time_handler = CommandHandler('time', time)
 # text = [nowStr, soonStr]
 # combine_handler = MessageHandler(Filters.text, venues)
 venues_handler = RegexHandler('venues', venues)
-first_handler = RegexHandler('0900', firstTime)
+eight_handler = RegexHandler('0800', eightTime)
 
 
 
@@ -455,7 +455,7 @@ S16_handler = RegexHandler('S16', S16_)
 
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(time_handler)
-dispatcher.add_handler(first_handler)
+dispatcher.add_handler(eight_handler)
 
 dispatcher.add_handler(venues_handler)
 dispatcher.add_handler(soc_handler)
