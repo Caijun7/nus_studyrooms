@@ -6,6 +6,7 @@ import datetime
 # venueInfo = json.loads(jsonData)
 venueInfo = json.load(open('venueinformation.json'))
 
+
 # print(venueInfo)
 
 def findRoom(room):
@@ -15,15 +16,17 @@ def findRoom(room):
         print("Invalid room")
         return "Invalid room"
 
+
 def findDay(weekday, rooms):
     # check if it is sunday
     if weekday == 6:
-		day = rooms[0]
-		availability = day["Availability"]
-		return availability
+        day = rooms[0]
+        availability = day["Availability"]
+        return availability
     day = rooms[weekday]
     availability = day["Availability"]
     return availability
+
 
 def findTiming(timing, availability):
     if timing in availability:
@@ -37,10 +40,16 @@ def findRoomState(roomInput, timing):
     room = findRoom(roomInput)
     now = datetime.datetime.now()
     availability = findDay(now.weekday(), room)
+
     roomState = findTiming(timing, availability)
-    return roomState
+    while int(timing) <= 2330:
+        timing = int(timing) + 30
+        if timing % 100 == 60:
+            timing = timing - 60 + 100
+        if roomState != findTiming(str(timing), availability):
+            break
 
+    return str(roomState + ' until ' + str(timing))
 
-
-# print(findRoomState("COM1-0201", "1300"))
+# print(findRoomState("COM1-0203", "1300"))
 
