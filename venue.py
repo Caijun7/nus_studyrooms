@@ -9,8 +9,8 @@ import booking_parser
 # importlib.import_module(fetch)
 # importlib.import_module(booking_parser)
 def openByBuilding(fac):
-	if "FASS" in fac:
-		return {'AS1': ['AS1-0201', 'AS1-0301', 'AS1-0208', 'AS1-0304', 'AS1-0303', 'AS1-0205', 'AS1-0209', 'AS1-0204',
+    if "FASS" in fac:
+        return {'AS1': ['AS1-0201', 'AS1-0301', 'AS1-0208', 'AS1-0304', 'AS1-0303', 'AS1-0205', 'AS1-0209', 'AS1-0204',
                         'AS1-0203', 'AS1-0302', 'AS1-0213', 'AS1-0210', 'AS1-0207', 'AS1-0548', 'AS1-0524', 'AS1-0401',
                         'AS1-0212'],
                 'AS2': ['AS2-0413', 'AS2-0311', 'AS2-0509', 'AS2-0510', 'AS2-0312', 'AS2-0203', 'AS2-0313', 'AS2-0204',
@@ -25,28 +25,29 @@ def openByBuilding(fac):
                         'AS6-0204'],
                 'AS7': ['AS7-0214', 'AS7-0106', 'AS7-0101', 'AS7-0119', 'AS7-0102', 'AS7-0201A', 'AS7-0201'],
                 'AS8': ['AS8-0402', 'AS8-0646', 'AS8-0401', 'AS8-0405', 'AS8-0647']};
-	elif "SOC" in fac:
-		return {'COM1': ['COM1-0212', 'COM1-0204', 'COM1-0203', 'COM1-0201', 'COM1-0209', 'COM1-0217', 'COM1-0113',
+    elif "SOC" in fac:
+        return {'COM1': ['COM1-0212', 'COM1-0204', 'COM1-0203', 'COM1-0201', 'COM1-0209', 'COM1-0217', 'COM1-0113',
                          'COM1-0114', 'COM1-B108', 'COM1-B111', 'COM1-B110', 'COM1-0207', 'COM1-0208', 'COM1-B109',
                          'COM1-0120', 'COM1-0218', 'COM1-B112', 'COM1-0210', 'COM1-0216', 'COM1-B103', 'COM1-B113',
                          'COM1-B102', 'COM1-0206'],
                 'COM2': ['COM2-0108'],
                 'I3': ['i3-0339', 'i3-0344', 'i3-0336', 'i3-0338', 'i3-Aud', 'i3-0337']};
-	elif "BIZ" in fac:
-		return {'BIZ1': ['BIZ1-0301', 'BIZ1-0205', 'BIZ1-0304', 'BIZ1-0201', 'BIZ1-0202', 'BIZ1-0206', 'BIZ1-0204',
+
+    elif "BIZ" in fac:
+        return {'BIZ1': ['BIZ1-0301', 'BIZ1-0205', 'BIZ1-0304', 'BIZ1-0201', 'BIZ1-0202', 'BIZ1-0206', 'BIZ1-0204',
                          'BIZ1-0303', 'BIZ1-SR6-4', 'BIZ1-SR6-1', 'BIZ1-0302', 'BIZ1-0307', 'BIZ1-0203', 'BIZ1-0305',
                          'BIZ1-CMRI'],
                 'BIZ2': ['BIZ2-0301', 'BIZ2-0404', 'BIZ2-0509', 'BIZ2-0510', 'BIZ2-0202', 'BIZ2-0413B', 'BIZ2-0413C',
                          'BIZ2-0201', 'BIZ2-0413A', 'BIZ2-B104', 'BIZ2-0420', 'BIZ2-0228', 'BIZ2-0227', 'BIZ2-0229',
                          'BIZ2-0302', 'BIZ2-0303', 'BIZ2-0117', 'BIZ2-0112', 'BIZ2-0114', 'BIZ2-0115', 'BIZ2-0118',
                          'BIZ2-0224']};
-	elif "SDE" in fac:
-		return {'SDE': ['SDE-427', 'SDE-SR15', 'SDE-SR10', 'SDE-SR13', 'SDE-424', 'SDE-423', 'SDE-DV3', 'SDE-SR11',
+    elif "SDE" in fac:
+        return {'SDE': ['SDE-427', 'SDE-SR15', 'SDE-SR10', 'SDE-SR13', 'SDE-424', 'SDE-423', 'SDE-DV3', 'SDE-SR11',
                         'SDE-ER5', 'SDE-SR9', 'SDE-SR12', 'SDE-426', 'SDE-SR14', 'SDE-422', 'SDE-DV1', 'SDE-425',
                         'SDE-421', 'SDE-MEZZ', 'SDE-ES1', 'SDE-DDL2-2', 'SDE-ES2', 'SDE-ER4', 'SDE-DV2', 'SDE-ER1',
                         'SDE-ISD-1', 'SDE-IDS1', 'SDE-IDS2', 'SDE-ISD-2']};
-	elif "FOS" in fac:
-		return {'S1': ['S1-03CR'],
+    elif "FOS" in fac:
+        return {'S1': ['S1-03CR'],
                 'S1A': ['S1A-0217'],
                 'S2': ['S2-0414', 'S2-0415'],
                 'S3': ['S3-05CR'],
@@ -62,8 +63,8 @@ def openByBuilding(fac):
                         'S16-0304', 'S16-0309', 'S16-0431', 'S16-05102', 'S16-05101', 'S16-06118'],
                 'S17': ['S17-0404', 'S17-0611', 'S17-0512', 'S17-0302', 'S17-0304', 'S17-0405', 'S17-0406',
                         'S17-0511']};
-	elif "FOE" in fac:
-		return {'E1': ['E1-06-01', 'E1-06-04', 'E1-06-06', 'E1-06-09', 'E1-06-03', 'E1-06-08', 'E1-06-07', 'E1-06-02',
+    elif "FOE" in fac:
+        return {'E1': ['E1-06-01', 'E1-06-04', 'E1-06-06', 'E1-06-09', 'E1-06-03', 'E1-06-08', 'E1-06-07', 'E1-06-02',
                        'E1-06-16', 'E1-06-05', 'E1-06-10', 'E1-06-12', 'E1-06-11', 'E1-06-15', 'E1-06-13', 'E1-06-14',
                        'E1A-05-19', 'E1-04-10PC'],
                 'E2': ['E2-03-02', 'E2-03-03', 'E2-0307PC4', 'E2-0306PC3', 'E2-03-32'],
@@ -76,18 +77,16 @@ def openByBuilding(fac):
                 'E4A': ['E4A-06-03'],
                 'E5': ['E5-02-32', 'E5-03-19', 'E5-03-22', 'E5-03-21', 'E5-03-20', 'E5-03-23'],
                 'EA': ['EA-06-04', 'EA-06-02', 'EA-02-11', 'EA-06-07', 'EA-06-03', 'EA-06-05', 'EA-06-06']};
-	elif "ERC" in fac:
-		return {'ERC': ['ERC-GLR', 'ERC-SR8', 'ERC-SR9CAM', 'ERC-SR11', 'ERC-SR10', 'ERC-SR3', 'ERC-ALR', 'ERC-SR4', 'ERC-SR5']};
-	elif "UTSRC" in fac:
-		return {'UTSRC': ['UTSRC-DA2', 'UTSRC-LT50', 'UTSRC-SR8', 'UTSRC-LT52', 'UTSRC-LT53', 'UTSRC-SR5', 'UTSRC-SR2', 'UTSRC-SR1', 'UTSRC-SR9', 'UTSRC-SR6', 'UTSRC-GLR', 'UTSRC-LT51', 'UTSRC-SR3', 'UTSRC-SR7', 'UTSRC-SR4']};
-	elif "LT" in fac:
-		return {'LT': ['LT1', 'LT2', 'LT3', 'LT4', 'LT5', 'LT6', 'LT7', 'LT7A', 'LT8', 'LT9', 'LT10', 'LT11', 'LT12', 'LT13', 'LT14', 'LT15', 'LT16', 'LT17', 'LT18', 'LT19', 'LT20', 'LT21', 'LT26', 'LT27', 'LT28', 'LT29', 'LT31', 'LT32', 'LT33', 'LT34']};
-	
-	return None;
+    elif "ERC" in fac:
+        return {'ERC': ['ERC-GLR', 'ERC-SR8', 'ERC-SR9CAM', 'ERC-SR11', 'ERC-SR10', 'ERC-SR3', 'ERC-ALR', 'ERC-SR4', 'ERC-SR5']};
+    elif "UTSRC" in fac:
+        return {'UTSRC': ['UTSRC-DA2', 'UTSRC-LT50', 'UTSRC-SR8', 'UTSRC-LT52', 'UTSRC-LT53', 'UTSRC-SR5', 'UTSRC-SR2', 'UTSRC-SR1', 'UTSRC-SR9', 'UTSRC-SR6', 'UTSRC-GLR', 'UTSRC-LT51', 'UTSRC-SR3', 'UTSRC-SR7', 'UTSRC-SR4']};
+    return None;
 
 
 def getAvailability(fac , buildingName):
 	now = datetime.datetime.now()
+	timing = now.hour*100
 	availability = dict()
 	
 	facBuilding = openByBuilding(fac)
@@ -95,22 +94,29 @@ def getAvailability(fac , buildingName):
 	
 	
 	for room in buildingRooms:
-		availability[room] = fetch.findRoomState(room,"1300")
+		availability[room] = fetch.findRoomState(room,str(timing))
 		
 	if "COM" in buildingName or "AS6" in buildingName or "i3" in buildingName:
 		buildingBookings =  booking_parser.getBooking(buildingName)
 		for room in buildingBookings[buildingName]:
-			availability[room] = checkBooking(room, buildingBookings[buildingName][room])
+			availability[room] = checkBooking(room, buildingBookings[buildingName][room],timing)
 	print(availability)
 	return availability
 	
 
-def checkBooking(room,bookings):
-	now = datetime.datetime.now()
+def checkBooking(room,bookings,timing):
+	tillTiming = "for the whole day"
+	freeWholeDay = True
 	for event in bookings:
-		if int(event[0])<=1300 and int(event[1])>1300:
-			return "occupied"
-	return "vacant"
+		tillTiming = event[0]
+		if int(event[0])>int(timing):
+			freeWholeDay = False
+			break
+		if int(event[0])<=int(timing) and int(event[1])>(timing):
+			return "occupied untill "+event[1]
+	if(not freeWholeDay):
+		tillTiming = "until "+ tillTiming
+	return "vacant "+tillTiming
 		
 
-# getAvailability("SOC", "COM1")
+#getAvailability("SOC", "COM1",datetime.datetime.now().hour*100)
