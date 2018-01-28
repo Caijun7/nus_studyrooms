@@ -111,4 +111,4 @@ def checkBooking(room,bookings):
 	return "vacant"
 		
 
-#getAvailability("SOC", "COM1")
+# getAvailability("SOC", "COM1")

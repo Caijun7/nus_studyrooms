@@ -42,13 +42,12 @@ def findRoomState(roomInput, timing):
     availability = findDay(now.weekday(), room)
 
     roomState = findTiming(timing, availability)
-    while int(timing) <= 2330:
+    while int(timing) < 2330:
         timing = int(timing) + 30
         if timing % 100 == 60:
             timing = timing - 60 + 100
         if roomState != findTiming(str(timing), availability):
             break
-
     return str(roomState + ' until ' + str(timing))
 
 # print(findRoomState("COM1-0203", "1300"))
