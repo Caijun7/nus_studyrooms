@@ -81,7 +81,9 @@ def openByBuilding(fac):
         return {'ERC': ['ERC-GLR', 'ERC-SR8', 'ERC-SR9CAM', 'ERC-SR11', 'ERC-SR10', 'ERC-SR3', 'ERC-ALR', 'ERC-SR4', 'ERC-SR5']};
     elif "UTSRC" in fac:
         return {'UTSRC': ['UTSRC-DA2', 'UTSRC-LT50', 'UTSRC-SR8', 'UTSRC-LT52', 'UTSRC-LT53', 'UTSRC-SR5', 'UTSRC-SR2', 'UTSRC-SR1', 'UTSRC-SR9', 'UTSRC-SR6', 'UTSRC-GLR', 'UTSRC-LT51', 'UTSRC-SR3', 'UTSRC-SR7', 'UTSRC-SR4']};
-    return None;
+    elif "LT" in fac:
+		return {'LT': ['LT1', 'LT2', 'LT3', 'LT4', 'LT5', 'LT6', 'LT7', 'LT7A', 'LT8', 'LT9', 'LT10', 'LT11', 'LT12', 'LT13', 'LT14', 'LT15', 'LT16', 'LT17', 'LT18', 'LT19', 'LT20', 'LT21', 'LT26', 'LT27', 'LT28', 'LT29', 'LT31', 'LT32', 'LT33', 'LT34']};
+	return None;
 
 
 def getAvailability(fac , buildingName):
